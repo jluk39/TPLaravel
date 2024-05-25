@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\CandyController;
 use Illuminate\Support\Facades\Route;
 
+/*
 Route::get('/', function () {
     return view('welcome');
 });
@@ -17,5 +19,7 @@ Route::get('candies', function () {
 Route::get('candies/{id}', function () {
     return view('candy');
 });
+*/
 
-//Route::get('candies', [CandyController::class, 'index']);
+Route::get('candies', [CandyController::class, 'index']);
+Route::get('candy/{id}', [CandyController::class, 'candy']);

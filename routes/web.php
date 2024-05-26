@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\CandyController as AdminCandyController;
 use App\Http\Controllers\CandyController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,5 +22,7 @@ Route::get('candies/{id}', function () {
 });
 */
 
-Route::get('candies', [CandyController::class, 'index']);
-Route::get('candy/{id}', [CandyController::class, 'candy']);
+Route::get('candies', [CandyController::class, 'index']) ->name('web.candies.index');
+Route::get('candies/{id}', [CandyController::class, 'candy']) ->name('web.candies.candy');
+
+Route::get('admin/candies', [AdminCandyController::class, 'index']) ->name('admin.index');

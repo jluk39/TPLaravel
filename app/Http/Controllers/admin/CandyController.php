@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Candie;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules\Can;
 
@@ -11,7 +12,55 @@ class CandyController extends Controller
     
     public function index()
     {
-        return view('admin.candies.index');
+        $candies = Candie::all();
+        return view('admin.candies.index', compact('candies'));
+    }
+
+    public function create()
+    {
+        return view('admin.candies.create');
+    }
+
+    public function store(Request $request)
+    {
+        $candie = new Candie;
+        $candie->name = request()->input('name');
+        $candie->description = request()->input('description');
+        $candie->category = request()->input('category');
+        $candie->price = request()->input('price');
+        $candie->image_url = request()->input('image_url');
+        $candie->is_visible = $request->has('is_visible') ? 1 : 0;
+        $candie->save();
+
+        return redirect()->route('admin.index');
+    }
+
+    public function edit($id)
+    {
+        $candie = Candie::find($id);
+        return view('admin.candies.edit', compact('candie'));
+    }
+
+    public function update($id, Request $request)
+    {
+        $candie = Candie::find($id);
+        $candie->name = request()->input('name');
+        $candie->description = request()->input('description');
+        $candie->category = request()->input('category');
+        $candie->price = request()->input('price');
+        $candie->image_url = request()->input('image_url');
+        $candie->is_visible = $request->has('is_visible') ? 1 : 0;
+        $candie->save();
+
+        return redirect()->route('admin.index');
+    }
+
+    public function destroy($id)
+    {
+        $candie = Candie::findOrFail($id);
+        $candie->delete();
+
+        return redirect()->route('admin.index');
     }
 
     public function candy($id)

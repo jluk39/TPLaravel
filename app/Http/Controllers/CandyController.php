@@ -10,7 +10,7 @@ class CandyController extends Controller
 {
     public function index()
     {   
-        $candies = Candie::paginate(6);
+        $candies = Candie::where('is_visible', 1)->paginate(6);
         return view('web.candies.index', compact('candies'));
         
     }

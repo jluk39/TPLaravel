@@ -8,7 +8,7 @@
           <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
               <h5 class="text-uppercase">Enlaces</h5>
               <ul class="list-unstyled mb-0">
-                  <li><a href="#" class="text-dark">Inicio</a></li>
+                  <li><a href="{{ route('web.candies.index') }}" class="text-dark">Inicio</a></li>
                   <li><a href="#" class="text-dark">Login</a></li>
                   <li><a href="#" class="text-dark">Registro</a></li>
               </ul>

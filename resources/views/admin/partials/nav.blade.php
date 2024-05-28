@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg">
-  <a class="navbar-brand" href="/candies">
+  <a class="navbar-brand" href="{{ route('web.candies.index') }}">
       <img src="https://i.gyazo.com/4227f4f4aefff1bdd6258ce486a97fbb.png" width="110px" class="d-inline-block align-top" alt="SugarPop! Logo">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,7 +8,7 @@
   <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
           <li class="nav-item active">
-              <a class="nav-link" href="#">Inicio</a>
+              <a class="nav-link" href="{{ route('web.candies.index') }}">Inicio</a>
           </li>
           <li class="nav-item">
               <a class="nav-link" href="#">Login</a>

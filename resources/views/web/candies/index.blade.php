@@ -10,13 +10,13 @@
             <div class="row">
                 @foreach($candies as $candie)
                     <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <img src="{{ $candie->url_imagen }}" class="card-img-top" alt="{{ $candie->nombre }}">
+                        <div class="card h-100">
+                            <img src="{{ $candie->image_url}}" class="card-img-top" alt="{{ $candie->name }}">
                             <div class="card-body">
-                                <h5 class="card-title">{{ $candie->nombre }}</h5>
-                                <p class="card-text">{{ $candie->descripcion }}</p>
-                                <p class="card-text"><strong>Precio: ${{ $candie->precio }}</strong></p>
-                                <a href="#" class="btn btn-primary">Comprar</a>
+                                <h5 class="card-title">{{ $candie->name }}</h5>
+                                <p class="card-text card-description">{{ $candie->description }}</p>
+                                <p class="card-text card-price"><strong>${{ number_format($candie->price, 2, ',', '.') }}</strong></p>
+                                <a href="{{ route('web.candies.candy', $candie->id) }}" class="btn btn-comprar btn-primary">Comprar</a>
                             </div>
                         </div>
                     </div>
@@ -24,7 +24,7 @@
             </div>
     
             <div class="d-flex justify-content-center">
-                {{ $candie->links() }}
+                {{ $candies->links() }}
             </div>
         </div>
 

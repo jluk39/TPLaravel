@@ -1,0 +1,36 @@
+nav.navbar, footer {
+    background-color: #ef8390;
+}
+
+nav.navbar a {
+    color: black;
+}
+
+nav.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para enlaces en el footer */
+footer a {
+    color: black;
+    text-decoration: none; /* Elimina el subrayado por defecto */
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+.media-body {
+    padding-left: 15px;
+}
+
+.card-price {
+    margin-top: 20px; /* Añadir margen superior para separación */
+    font-weight: bold;
+    font-size: 1.5rem; /* Aumentar el tamaño de la fuente para destacar el precio */
+}
+
+.media img {
+    max-width: 100%; /* Asegurar que la imagen sea responsiva */
+}

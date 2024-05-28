@@ -14,7 +14,7 @@
                             <h5 class="mt-0">{{ $candie->name }}</h5>
                             <p>{{ $candie->description }}</p>
                             <p class="card-price"><strong>${{ number_format($candie->price, 2, ',', '.') }}</strong></p>
-                            <a href="#" class="btn btn-primary">Comprar</a>
+                            <a href="#" class="btn btn-primary"><i class="fas fa-shopping-basket"></i> Añadir Al Carrito</a>
                         </div>
                     </div>
 

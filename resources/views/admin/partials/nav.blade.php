@@ -16,6 +16,9 @@
           <li class="nav-item">
               <a class="nav-link" href="#">Registro</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('admin.index') }}">Backend</a>
+        </li>
       </ul>
   </div>
 </nav>

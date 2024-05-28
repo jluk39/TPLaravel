@@ -12,7 +12,7 @@ class CandyController extends Controller
     
     public function index()
     {
-        $candies = Candie::all();
+        $candies = Candie::paginate(12);
         return view('admin.candies.index', compact('candies'));
     }
 
@@ -61,11 +61,6 @@ class CandyController extends Controller
         $candie->delete();
 
         return redirect()->route('admin.index');
-    }
-
-    public function candy($id)
-    {
-        return view('admin.candies.candy', ['id' => $id]);
     }
 
 }

@@ -26,7 +26,7 @@ class CandyController extends Controller
         $candie = new Candie;
         $candie->name = request()->input('name');
         $candie->description = request()->input('description');
-        $candie->category = request()->input('category');
+        $candie->type_id = request()->input('type_id');
         $candie->price = request()->input('price');
         $candie->image_url = request()->input('image_url');
         $candie->is_visible = $request->has('is_visible') ? 1 : 0;
@@ -46,7 +46,7 @@ class CandyController extends Controller
         $candie = Candie::find($id);
         $candie->name = request()->input('name');
         $candie->description = request()->input('description');
-        $candie->category = request()->input('category');
+        $candie->type_id = request()->input('type_id');
         $candie->price = request()->input('price');
         $candie->image_url = request()->input('image_url');
         $candie->is_visible = $request->has('is_visible') ? 1 : 0;

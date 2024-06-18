@@ -36,7 +36,7 @@
                                 <td><img src="{{ $candie->image_url }}" alt="{{ $candie->name }}" class="img-thumbnail" style="width: 100px;"></td>
                                 <td>{{ $candie->name }}</td>
                                 <td>{{ $candie->description }}</td>
-                                <td>{{ $candie->category }}</td>
+                                <td>{{ $candie->type_id }}</td>
                                 <td>${{ number_format($candie->price, 2, ',', '.') }}</td>
                                 <td>
                                     <a href="/admin/candies/{{ $candie->id }}/edit" class="btn btn-primary"><i class="fas fa-edit"></i> Editar</a>

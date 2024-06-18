@@ -15,11 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('name', 150);
             $table->text('description')->nullable();
-            $table->string('category', 150);
+            $table->unsignedBigInteger('type_id')->index();
             $table->decimal('price', 10, 2);
             $table->string('image_url')->nullable();
             $table->boolean('is_visible')->default(true);
             $table->timestamps();
+
+            $table->foreign('type_id')->references('id')->on('types');
         });
     }
 

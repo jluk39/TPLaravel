@@ -3,15 +3,19 @@
 @section('content')
     <div class="row">
         <div class="col-md-8 offset-md-2">
-            <div class="media">
-                <img src="{{ $candie->image_url }}" class="mr-3 img-fluid" alt="{{ $candie->name }}" style="max-width: 300px;">
-                <div class="media-body">
-                    <h5 class="mt-0">{{ $candie->name }}</h5>
-                    <p>{{ $candie->description }}</p>
-                    <p class="card-price"><strong>${{ number_format($candie->price, 2, ',', '.') }}</strong></p>
-                    <a href="#" class="btn btn-primary"><i class="fas fa-shopping-basket"></i> Añadir Al Carrito</a>
+            @if($candie)
+                <div class="media">
+                    <img src="{{ $candie->image_url }}" class="mr-3 img-fluid" alt="{{ $candie->name }}" style="max-width: 300px;">
+                    <div class="media-body">
+                        <h5 class="mt-0">{{ $candie->name }}</h5>
+                        <p>{{ $candie->description }}</p>
+                        <p class="card-price"><strong>${{ number_format($candie->price, 2, ',', '.') }}</strong></p>
+                        <a href="#" class="btn btn-primary"><i class="fas fa-shopping-basket"></i> Añadir Al Carrito</a>
+                    </div>
                 </div>
-            </div>
+            @else
+                <p>La golosina no fue encontrada.</p>
+            @endif
 
             <!-- Preguntas Frecuentes -->
             <div class="accordion mt-5" id="accordionPanelsStayOpenExample">

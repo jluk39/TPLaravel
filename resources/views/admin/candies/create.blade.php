@@ -19,8 +19,8 @@
                 </div>
                 
                 <div class="form-group mb-4">
-                    <label for="category">Categoría</label>
-                    <input type="text" class="form-control" id="category" name="category" required>
+                    <label for="type_id">Categoría</label>
+                    <input type="number" class="form-control" id="type_id" name="type_id" required>
                 </div>
                 
                 <div class="form-group mb-4">
@@ -29,8 +29,8 @@
                 </div>
                 
                 <div class="form-group mb-4">
-                    <label for="image_url">URL de la Imagen</label>
-                    <input type="text" class="form-control" id="image_url" name="image_url">
+                    <label for="image">Imagen</label>
+                    <input type="file" class="form-control" id="image" name="image">
                 </div>
                 
                 <div class="form-group form-check mb-4">

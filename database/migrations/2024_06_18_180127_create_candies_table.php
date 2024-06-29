@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->unsignedBigInteger('type_id')->index();
             $table->decimal('price', 10, 2);
-            $table->string('image_url')->nullable();
+            $table->integer('image_id')->unsigned()->nullable()->index();
             $table->boolean('is_visible')->default(true);
             $table->timestamps();
 

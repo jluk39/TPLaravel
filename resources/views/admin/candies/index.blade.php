@@ -33,7 +33,7 @@
                     <tbody>
                         @foreach($candies as $candie)
                             <tr>
-                                <td><img src="{{ $candie->image_url }}" alt="{{ $candie->name }}" class="img-thumbnail" style="width: 100px;"></td>
+                                <td><img src="/storage/{{ $candie?->image?->src }}" alt="{{ $candie->name }}" class="img-thumbnail" style="width: 100px;"></td>
                                 <td>{{ $candie->name }}</td>
                                 <td>{{ $candie->description }}</td>
                                 <td>{{ $candie->type_id }}</td>

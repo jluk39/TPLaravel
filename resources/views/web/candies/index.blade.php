@@ -31,7 +31,7 @@
             @foreach($candies as $candie)
                 <div id="productos" class="col-md-4 mb-4">
                     <div class="card h-100">
-                        <img src="{{ $candie->image_url }}" class="card-img-top" alt="{{ $candie->name }}" style="width: 200px">
+                        <img src="/storage/{{ $candie?->image?->src }}" class="card-img-top" alt="{{ $candie->name }}" style="width: 200px">
                         <div class="card-body">
                             <h5 class="card-title">{{ $candie->name }}</h5>
                             <p class="card-text card-description">{{ $candie->description }}</p>

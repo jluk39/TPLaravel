@@ -19,8 +19,12 @@
                 </div>
                 
                 <div class="form-group mb-4">
-                    <label for="type_id">Categoría</label>
-                    <input type="number" class="form-control" id="type_id" name="type_id" required>
+                    <label for="category">Categoría</label>
+                    <select class="form-control" id="type_id" name="type_id" required>
+                        @foreach($types as $type)
+                            <option value="{{ $type->id }}">{{ $type->name }}</option>
+                        @endforeach
+                    </select>
                 </div>
                 
                 <div class="form-group mb-4">

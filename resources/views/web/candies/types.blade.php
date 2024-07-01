@@ -4,33 +4,15 @@
     <div class="row mb-5">
         <div class="col-12">
             <div class="jumbotron text-center custom-jumbotron">
-                <h1 class="display-4">Bienvenido a nuestra Tienda de Golosinas</h1>
-                <p class="lead">Encontrá las mejores marcas a los mejores precios</p>
+                <h1 class="display-4">Categoría {{ $type->name }}</h1>
+                <p class="lead">SugarPop! tu mejor negocio de dulces</p>
                 <hr class="my-4">
-                <p>¿Qué esperás para darte tu antojo dulce?</p>
-                <a class="btn btn-primary btn-lg" href="#productos" role="button">Ir a Productos</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="row mb-5">
-        <div class="col-12">
-            <h2 class="text-center">Sobre Nosotros</h2>
-            <p class="text-center">SugarPop nació en 2021, y desde entonces somos un negocio familiar dedicado a ofrecer una gran variedad de golosinas y productos varios. Nuestro compromiso es brindarte los productos más ricos y frescos para que los disfrutes a pleno.</p>
-        </div>
-    </div>
-
-    <div class="row mb-5">
-        <div class="col-12 text-center">
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="categoriesDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                    Categorías Disponibles
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
-                    @foreach($types as $type)
-                        <li><a class="dropdown-item" href="{{ url('types/' . $type->id) }}">{{ $type->name }}</a></li>
-                    @endforeach
-                </ul>
+                <p>Descubrí las mejores golosinas de este tipo.</p>
+                <div class="text-start">
+                    <a class="btn btn-primary btn-lg" href="{{ route('web.candies.index') }}" role="button">
+                        <i class="fas fa-arrow-left"></i> Volver a Inicio
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -39,7 +21,7 @@
         @if($candies->isEmpty())
             <div class="col-12">
                 <div class="alert alert-warning text-center" role="alert">
-                    Lo sentimos, en este momento no hay productos disponibles.
+                    Lo sentimos, en este momento no hay productos disponibles en esta categoría.
                 </div>
             </div>
         @else

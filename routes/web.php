@@ -11,6 +11,7 @@ Route::get('/', function () {
 
 Route::get('candies', [CandyController::class, 'index']) ->name('web.candies.index');
 Route::get('candies/{id}', [CandyController::class, 'candy']) ->name('web.candies.candy');
+Route::get('types/{id}', [CandyController::class, 'type']) ->name('web.candies.types');
 
 Route::get('admin/candies', [AdminCandyController::class, 'index']) ->name('admin.index');
 Route::get('admin/candies/create', [AdminCandyController::class, 'create']) ->name('admin.create');

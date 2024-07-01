@@ -14,4 +14,9 @@ class Candie extends Model
         return $this->belongsTo(Image::class);
     }
 
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
+    }
+
 }

@@ -5,7 +5,7 @@
         <div class="col-md-8 offset-md-2">
             @if($candie)
                 <div class="media">
-                    <img src="{{ $candie->image_url }}" class="mr-3 img-fluid" alt="{{ $candie->name }}" style="max-width: 300px;">
+                    <img src="/storage/{{ $candie?->image?->src }}" class="mr-3 img-fluid" alt="{{ $candie->name }}" style="max-width: 300px;">
                     <div class="media-body">
                         <h5 class="mt-0">{{ $candie->name }}</h5>
                         <p>{{ $candie->description }}</p>

@@ -19,8 +19,14 @@
                 </div>
                 
                 <div class="form-group mb-4">
-                    <label for="category">Categoría</label>
-                    <input value="{{ $candie->category }}" type="text" class="form-control" id="category" name="category" required>
+                    <label for="type_id">Categoría</label>
+                    <select class="form-control" id="type_id" name="type_id" required>
+                        @foreach($types as $type)
+                            <option value="{{ $type->id }}" {{ $type->id == $candie->type_id ? 'selected' : '' }}>
+                                {{ $type->name }}
+                            </option>
+                        @endforeach
+                    </select>
                 </div>
                 
                 <div class="form-group mb-4">
@@ -29,8 +35,15 @@
                 </div>
                 
                 <div class="form-group mb-4">
-                    <label for="image_url">URL de la Imagen</label>
-                    <input value="{{ $candie->image_url }}" type="text" class="form-control" id="image_url" name="image_url">
+                    <label for="image">Imagen</label>
+                    <div class="d-flex align-items-center">
+                        <input type="file" class="form-control me-3" id="image" name="image">
+                        @if($candie->image)
+                            <div class="border p-2">
+                                <img src="{{ asset('storage/' . $candie->image->src) }}" alt="{{ $candie->name }}" width="150">
+                            </div>
+                        @endif
+                    </div>
                 </div>
                 
                 <div class="form-group form-check mb-4">

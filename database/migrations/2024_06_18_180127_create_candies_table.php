@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('image_id')->unsigned()->nullable()->index();
             $table->boolean('is_visible')->default(true);
             $table->timestamps();
+            $table->foreign('type_id')->references('id')->on('types');
         });
     }
 

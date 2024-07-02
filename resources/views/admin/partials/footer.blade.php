@@ -9,8 +9,8 @@
               <h5 class="text-uppercase">Enlaces</h5>
               <ul class="list-unstyled mb-0">
                   <li><a href="{{ route('web.candies.index') }}" class="text-dark">Inicio</a></li>
-                  <li><a href="#" class="text-dark">Login</a></li>
-                  <li><a href="#" class="text-dark">Registro</a></li>
+                  <li><a href="{{ route ('login') }}" class="text-dark">Login</a></li>
+                  <li><a href="{{ route ('register') }}" class="text-dark">Registro</a></li>
               </ul>
           </div>
           <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
@@ -33,3 +33,4 @@
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
     </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>

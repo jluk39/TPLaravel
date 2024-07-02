@@ -10,7 +10,11 @@
                         <h5 class="mt-0">{{ $candie->name }}</h5>
                         <p>{{ $candie->description }}</p>
                         <p class="card-price"><strong>${{ number_format($candie->price, 2, ',', '.') }}</strong></p>
-                        <a href="#" class="btn btn-primary"><i class="fas fa-shopping-basket"></i> Añadir Al Carrito</a>
+                        <form action="{{ route('web.candies.add', ['id' => $candie->id]) }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="id" value="{{ $candie->id }}">
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-shopping-basket"></i> Añadir Al Carrito</button>
+                        </form>
                     </div>
                 </div>
             @else

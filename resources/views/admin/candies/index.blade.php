@@ -8,6 +8,17 @@
         </div>
     </div>
 
+    <div class="row mb-3">
+        <div class="col-12">
+            <form action="{{ route('admin.index') }}" method="GET" class="form-inline">
+                <div class="input-group">
+                    <input type="search" name="search" class="form-control" placeholder="Buscar por nombre o categoría">
+                    <button type="submit" class="btn btn-primary">Buscar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     @if($candies->isEmpty())
         <div class="row">
             <div class="col-12">
@@ -36,7 +47,7 @@
                                 <td><img src="/storage/{{ $candie?->image?->src }}" alt="{{ $candie->name }}" class="img-thumbnail" style="width: 100px;"></td>
                                 <td>{{ $candie->name }}</td>
                                 <td>{{ $candie->description }}</td>
-                                <td>{{ $candie->type_id }}</td>
+                                <td>{{ $candie->type->name }}</td>
                                 <td>${{ number_format($candie->price, 2, ',', '.') }}</td>
                                 <td>
                                     <a href="/admin/candies/{{ $candie->id }}/edit" class="btn btn-primary"><i class="fas fa-edit"></i> Editar</a>

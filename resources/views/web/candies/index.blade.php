@@ -35,6 +35,15 @@
         </div>
     </div>
 
+    <div class="row mb-3">
+        <div class="col-12">
+            <form action="{{ route('web.candies.index') }}" method="GET" class="d-flex">
+                <input class="form-control me-2" type="search" name="search" placeholder="Buscar por nombre de artículo" aria-label="Buscar">
+                <button class="btn btn-outline-primary" type="submit">Buscar</button>
+            </form>
+        </div>
+    </div>
+
     <div class="row">
         @if($candies->isEmpty())
             <div class="col-12">

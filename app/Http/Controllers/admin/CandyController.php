@@ -15,10 +15,20 @@ class CandyController extends Controller
     
     public function index()
     {
-        $candies = Candie::paginate(12);
-        return view('admin.candies.index', compact('candies'));
-    }
+        $search = request()->input('search');
 
+        $candies = Candie::query()
+            ->when($search, function ($query, $search) {
+                return $query->where('name', 'like', '%' . $search . '%')
+                            ->orWhereHas('type', function ($query2) use ($search) {
+                                $query2->where('name', 'like', '%' . $search . '%');
+                            });
+            })
+            ->paginate(12);
+
+        return view('admin.candies.index', compact('candies', 'search'));
+    }
+    
     public function create()
     {
         $types = Type::all();

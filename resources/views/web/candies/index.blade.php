@@ -44,6 +44,18 @@
         </div>
     </div>
 
+    <div>
+        <a href="{{route('web.candies.cart')}}" class="btn btn-warning" style="margin-bottom: 10px">
+            <i class="fas fa-shopping-cart"></i> Carrito ({{count(session('cart',[]))}})
+            </a>
+    </div>
+
+    @if (session()->has('success'))
+        <div class="alert success">
+            {{ session()->get('success') }}
+        </div>
+    @endif
+
     <div class="row">
         @if($candies->isEmpty())
             <div class="col-12">

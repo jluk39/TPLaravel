@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg">
     <a class="navbar-brand" href="{{ route('web.candies.index') }}">
-        <img src="https://i.gyazo.com/4227f4f4aefff1bdd6258ce486a97fbb.png" width="110px" class="d-inline-block align-top" alt="SugarPop! Logo">
+        <img src="https://iili.io/duYqhWF.png" width="110px" class="d-inline-block align-top" alt="SugarPop! Logo">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

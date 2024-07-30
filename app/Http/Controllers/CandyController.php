@@ -33,7 +33,7 @@ class CandyController extends Controller
 
     public function type($type_id)
     {
-        $type = Type::find($type_id); 
+        $type = Type::find($type_id);
         $candies = Candie::where('type_id', $type_id)->paginate(6);
         return view('web.candies.types', compact('candies', 'type'));
     }

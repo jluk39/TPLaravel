@@ -12,7 +12,7 @@ use Illuminate\Validation\Rules\Can;
 
 class CandyController extends Controller
 {
-    
+
     public function index()
     {
         $search = request()->input('search');
@@ -28,10 +28,10 @@ class CandyController extends Controller
 
         return view('admin.candies.index', compact('candies', 'search'));
     }
-    
+
     public function create()
     {
-        $types = Type::all();
+        $types = Type::orderBy('name')->get();
         return view('admin.candies.create', compact('types'));
     }
 
@@ -59,7 +59,7 @@ class CandyController extends Controller
     public function edit($id)
     {
         $candie = Candie::find($id);
-        $types = Type::all();
+        $types = Type::orderBy('name')->get();
         return view('admin.candies.edit', compact('candie', 'types'));
     }
 
@@ -77,13 +77,13 @@ class CandyController extends Controller
                 Storage::delete($candie->image->src);
                 $candie->image->delete();
             }
-            
+
             // Guardar la nueva imagen
             $src = $request->file('image')->store('candies');
             $image = new Image;
             $image->src = $src;
             $image->save();
-            
+
             $candie->image_id = $image->id;
         }
         $candie->save();
